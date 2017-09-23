@@ -1,2 +1,4 @@
 # illumina_extract_barcodes
 Extracts barcodes of interest from Illumina unmatched reads FASTQ files
+
+Extracts FASTQ records matching the specified barcodes from the unmatched read FASTQ file or pair of FASTQ files if paired-end sequencing. For each barcode specified, reads matching the barcode will be extracted into 1) A new FASTQ file if single-end sequencing, 2) A pair of FASTQ files if paired-end sequencing and the 'interleaved' option was set to False, or 3) A single interleaved FASTQ file if paired-end and 'interleaved' was set to True. All output files are compressed with gzip. If paired-end and one of the reads in a pair that matches a given barcode isn't present in the unmatched reads, then neither read of the pair will be output. Note that the standard output stream will include the number of reads matching each of the specified barcodes.
